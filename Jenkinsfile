@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh 'rm -rf hello-world-war'
-                sh 'git clone https://github.com/Harshahd97/hello-world-war.git'
+                sh 'rm -rf Parcel-service'
+                sh 'git clone https://github.com/Harshahd97/Parcel-service.git'
             }
         }
         stage('Build') {
@@ -13,10 +13,6 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage('Deploy') {
-            steps {
-                sh 'sudo cp /home/slave2/workspace/pipeline_job_1/target/hello-world-war-1.0.0.war /opt/apache-tomcat-8.5.98/webapps/'
-            }
         }
     } 
   }   
