@@ -12,6 +12,12 @@ pipeline {
                 sh 'mvn --version'
                 sh 'mvn clean install'
             }
+        stage('Deploy') {
+            steps {
+                sh 'sudo cp /home/slave2/workspace/parcel_service_pipeline/target/simple-parcel-service-app-1.0-SNAPSHOT.jar /opt/apache-tomcat-8.5.98/webapps/'
         }
         }
     } 
+}
+}
+    
