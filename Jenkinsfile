@@ -23,7 +23,7 @@ pipeline {
                 sh "java -jar target/simple-parcel-service-app-1.0-SNAPSHOT.jar &"
                 sleep 30
             }
-        
+         }
         stage('Deploy') {
             steps {
                 sh 'ssh root@172.31.28.191'
@@ -31,5 +31,4 @@ pipeline {
         }
         }
     } 
-}
 }
