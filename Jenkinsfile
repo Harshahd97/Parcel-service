@@ -11,12 +11,11 @@ pipeline {
             steps {
                 sh 'mvn --version'
                 sh 'mvn clean install'
-                sh 'mvn spring-boot:run'
             }
         }
-         stage('Run Locally') {
+        stage('Run Locally') {
         steps {
-                sh "java -jar target/simple-parcel-service-app-1.0-SNAPSHOT.jar &"
+                sh 'java -jar target/simple-parcel-service-app-1.0-SNAPSHOT.jar &'
                 sleep 30
             }
          }
