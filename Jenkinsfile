@@ -1,8 +1,5 @@
 pipeline {
     agent { label 'slave2' }
-    environment {
-    MAVEN_HOME = tool 'mvn'
-}
     stages {
         stage('Checkout') {
             steps {
@@ -15,7 +12,6 @@ pipeline {
                 sh 'mvn --version'
                 sh 'mvn clean install'
                 sh 'mvn spring-boot:run'
-                sh '${MAVEN_HOME}/bin/mvn clean package'
             }
         }
          stage('Run Locally') {
