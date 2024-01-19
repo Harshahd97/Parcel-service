@@ -20,9 +20,9 @@ pipeline {
             }
         }
         
-        #stage("SonarQube analysis") {
+        #stage("SonarQube analysis") #{
             #steps {
-                #withSonarQubeEnv('sonar') {
+                #withSonarQubeEnv('sonar') #{
                     #sh 'mvn clean package sonar:sonar'
               #}
             #}
